@@ -1,0 +1,11 @@
+
+
+.tab-active {
+    color: #ff6700;
+    border-bottom: 2px solid #ff6700;
+}
+
+.box-bd .next {
+    display: none;
+}
+
