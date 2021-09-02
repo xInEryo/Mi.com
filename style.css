@@ -11,8 +11,7 @@
     font-style: normal;
     font-display: block;
   }
-
-
+  
 * {
     margin: 0;
     padding: 0;
@@ -723,7 +722,7 @@ img {
 /* home-main 主体部分*/
 
 .home-main {
-    height: 4841px;
+    height: 4997px;
     padding-top: 4px;
     padding-bottom: 12px;
     background: #f5f5f5;
@@ -975,5 +974,89 @@ img {
     width: 50px;
     height: 50px;
 }
+
+
+.video-list .video-img{
+    position: relative;
+    width: 296px;
+    height: 180px;
+    margin: 0 0 28px;
+}
+
+.video-list .video-img img {
+    width: 296px;
+    height: 180px;
+}
+
+.video-list .video-item .title {
+    margin: 0 14px 6px;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    color: #333;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.video-list .video-item .desc {
+    height: 18px;
+    margin: 0 14px;
+    font-size: 12px;
+    color: #b0b0b0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+
+
+
+
+.video-list .video-item {
+    position: relative;
+    float: left;
+    width: 296px;
+    height: 285px;
+    margin-left: 14px;
+    margin-bottom: 14px;
+    text-align: center;
+    background: #fff;
+    transition: all .2s linear;
+}
+
+.video-list .video-item:first-of-type{
+    margin-left: 0;
+}
+
+
+.video-list .video-item .play {
+    position: absolute;
+    left: 20px;
+    bottom: 10px;
+    width: 32px;
+    height: 20px;
+    border: 2px solid #fff;
+    border-radius: 12px;
+    background-color: #424242;
+    background-color: rgba(0,0,0,.6);
+    color: #fff;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    overflow: hidden;
+}
+
+.video-list .video-item .play  i{
+    font-size: 18px;
+    line-height: 20px;
+}
+
+
+.video-list .video-item .video-img:hover .play {
+    background-color: #ff6700;
+    border-color: #ff6700;
+}
+
+
+
 
 /* home-main 主体部分end*/

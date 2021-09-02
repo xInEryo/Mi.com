@@ -1,0 +1,16 @@
+{
+  "id": "2786642",
+  "name": "monster",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "19986335",
+      "name": "播放",
+      "font_class": "bofang",
+      "unicode": "e7be",
+      "unicode_decimal": 59326
+    }
+  ]
+}
