@@ -85,3 +85,93 @@ for (var i = 0; i < tabLis_zb.length; i++) {
         items_zb[this.getAttribute('index')].style.display = 'block';
     }
 }
+
+
+//轮播图
+
+var circle = document.querySelector('.circle');
+var swiper_img = document.querySelector('.swiper-img');
+var imgLis = swiper_img.querySelector('ul');
+var w = document.querySelector('.w');
+var swiper_btn_prev = document.querySelector('.swiper-btn-prev');
+var swiper_btn_next = document.querySelector('.swiper-btn-next');
+var imgWidth = w.offsetWidth;
+var num = 0;
+//控制小圆圈的变量
+var rings = 0;
+
+
+for (let i = 0; i < imgLis.children.length; i++) {
+    var circleLis = document.createElement('a');
+    circleLis.setAttribute('index', i);
+    circle.appendChild(circleLis);
+    circle.children[0].className = 'current';
+    circleLis.href = 'javascript:;';
+    circleLis.addEventListener('click', function () {
+        for (let j = 0; j < circle.children.length; j++) {
+            circle.children[j].className = '';
+        }
+        this.className = 'current';
+        let index = this.getAttribute('index');
+        animate(imgLis, -index * imgWidth);
+        num = index;
+        rings = index;
+    })
+}
+
+var firstImg = imgLis.children[0].cloneNode(true);
+imgLis.appendChild(firstImg);
+
+
+swiper_btn_prev.addEventListener('click', function () {
+    if (num == 0) {
+        imgLis.style.left = -(imgLis.children.length - 1) * imgWidth + 'px';
+        num = imgLis.children.length - 1;
+    }
+    num--;
+    animate(imgLis, -num * imgWidth);
+
+    if (rings == 0) {
+        rings = imgLis.children.length - 1;
+    }
+    rings--;
+    circleChange();
+})
+swiper_btn_next.addEventListener('click', function () {
+    if (num == imgLis.children.length - 1) {
+        imgLis.style.left = 0 + 'px';
+        num = 0;
+    }
+    num++;
+    animate(imgLis, -num * imgWidth);
+
+    rings++;
+    if (rings == imgLis.children.length - 1) {
+        rings = 0;
+    }
+    circleChange();
+})
+
+function circleChange() {
+    for (let i = 0; i < circle.children.length; i++) {
+        circle.children[i].className = '';
+    }
+    circle.children[rings].className = 'current';
+
+}
+
+var timer = setInterval(function () {
+    swiper_btn_next.click();
+}, 3000)
+
+swiper_img.addEventListener('mouseenter', function () {
+    clearInterval(timer);
+    timer = null;
+    console.log(1);
+})
+swiper_img.addEventListener('mouseleave', function () {
+    timer = setInterval(function () {
+        //手动调用点击事件！
+        swiper_btn_next.click();
+    }, 3000);
+})

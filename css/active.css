@@ -9,3 +9,9 @@
     display: none;
 }
 
+.swiper .swiper-img .current {
+    background: hsla(0,0%,100%,.4);
+    border-color: rgba(0,0,0,.4);
+}
+
+

@@ -2,11 +2,11 @@
 /* 字体声明 */
 @font-face {
     font-family: 'icomoon';
-    src:  url('fonts/icomoon.eot?bj1qwr');
-    src:  url('fonts/icomoon.eot?bj1qwr#iefix') format('embedded-opentype'),
-      url('fonts/icomoon.ttf?bj1qwr') format('truetype'),
-      url('fonts/icomoon.woff?bj1qwr') format('woff'),
-      url('fonts/icomoon.svg?bj1qwr#icomoon') format('svg');
+    src:  url('../fonts/icomoon.eot?bj1qwr');
+    src:  url('../fonts/icomoon.eot?bj1qwr#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?bj1qwr') format('truetype'),
+      url('../fonts/icomoon.woff?bj1qwr') format('woff'),
+      url('../fonts/icomoon.svg?bj1qwr#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -217,7 +217,7 @@ img {
     left: 0;
     width: 56px;
     height: 56px;
-    background: url(images/logo-mi2.png) no-repeat;
+    background: url(../images/logo-mi2.png) no-repeat;
     background-size: 56px;
     cursor: pointer;
 }
@@ -314,12 +314,70 @@ img {
 .swiper .container{
     position: relative;
     height: 460px;
-    background: url(images/swiper-pic2.png) no-repeat;
-    background-size: auto;
+    /* background: url(../images/swiper-pic2.png) no-repeat;
+    background-size: auto;  */
     /* cursor: pointer; */
 }
 
+.swiper .swiper-img{
+    position: relative;
+    height: 460px;
+    background-size: auto;
+    overflow: hidden;
+}
+
+.swiper-img ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500%;
+}
+
+.swiper-img ul li a img {
+    width: 1226px;
+    height: 460px;
+}
+
+.swiper-img ul li {
+    float: right;
+}
+
+
+.swiper .circle{
+    position: absolute;
+    z-index: 10;
+    width: 400px;
+    right: 30px;
+    left: auto;
+    bottom: 20px;
+    font-size: 0;
+    text-align: right;
+    transition: opacity .3s;
+    transform: translateZ(0);
+}
+
+.swiper-img .circle a{
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border: 2px solid #fff;
+    border-color: hsla(0,0%,100%,.3);
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgba(0,0,0,.4);
+    opacity: 1;
+    margin: 0 4px;
+}
+
+.swiper-img .circle a:hover {
+    background: hsla(0,0%,100%,.4);
+    border-color: rgba(0,0,0,.4);
+}
+
 .swiper .swiper-aside {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 234px;
     height: 460px;
     border: 0;
@@ -363,7 +421,7 @@ img {
     margin-top: -35px;
     width: 41px;
     height: 69px;
-    background: url(images/icon-slides.png) no-repeat -125px 50%;
+    background: url(../images/icon-slides.png) no-repeat -125px 50%;
     cursor: pointer;
 }
 
@@ -375,15 +433,15 @@ img {
     margin-top: -35px;
     width: 41px;
     height: 69px;
-    background: url(images/icon-slides.png) no-repeat -84px 50%;
+    background: url(../images/icon-slides.png) no-repeat -84px 50%;
     cursor: pointer;
 }
 
 .swiper .swiper-btn-next:hover {
-    background: url(images/icon-slides.png) no-repeat -43px 50%;
+    background: url(../images/icon-slides.png) no-repeat -43px 50%;
 }
 .swiper .swiper-btn-prev:hover {
-    background: url(images/icon-slides.png) no-repeat -1px 50%;
+    background: url(../images/icon-slides.png) no-repeat -1px 50%;
 }
 
             /* ..style1 */
