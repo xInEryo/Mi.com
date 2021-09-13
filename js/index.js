@@ -121,35 +121,46 @@ for (let i = 0; i < imgLis.children.length; i++) {
 
 var firstImg = imgLis.children[0].cloneNode(true);
 imgLis.appendChild(firstImg);
-
+var flag = true;
 
 swiper_btn_prev.addEventListener('click', function () {
-    if (num == 0) {
-        imgLis.style.left = -(imgLis.children.length - 1) * imgWidth + 'px';
-        num = imgLis.children.length - 1;
-    }
-    num--;
-    animate(imgLis, -num * imgWidth);
+    if (flag) {
+        flag = false;
+        if (num == 0) {
+            imgLis.style.left = -(imgLis.children.length - 1) * imgWidth + 'px';
+            num = imgLis.children.length - 1;
+        }
+        num--;
+        animate(imgLis, -num * imgWidth, function () {
+            flag = true;
+        });
 
-    if (rings == 0) {
-        rings = imgLis.children.length - 1;
+        if (rings == 0) {
+            rings = imgLis.children.length - 1;
+        }
+        rings--;
+        circleChange();
     }
-    rings--;
-    circleChange();
+
 })
 swiper_btn_next.addEventListener('click', function () {
-    if (num == imgLis.children.length - 1) {
-        imgLis.style.left = 0 + 'px';
-        num = 0;
-    }
-    num++;
-    animate(imgLis, -num * imgWidth);
+    if (flag) {
+        flag = false;
+        if (num == imgLis.children.length - 1) {
+            imgLis.style.left = 0 + 'px';
+            num = 0;
+        }
+        num++;
+        animate(imgLis, -num * imgWidth, function () {
+            flag = true;
+        });
 
-    rings++;
-    if (rings == imgLis.children.length - 1) {
-        rings = 0;
+        rings++;
+        if (rings == imgLis.children.length - 1) {
+            rings = 0;
+        }
+        circleChange();
     }
-    circleChange();
 })
 
 function circleChange() {
@@ -174,4 +185,19 @@ swiper_img.addEventListener('mouseleave', function () {
         //手动调用点击事件！
         swiper_btn_next.click();
     }, 3000);
+})
+
+
+//工具栏
+var tool_bar = document.querySelector('.tool-bar');
+tool_bar.addEventListener('click', function () {
+    console.log(1);
+})
+window.addEventListener('resize', function () {
+    if (window.innerWidth <= 1460) {
+        tool_bar.className = 'tool-bar tool-bar-small';
+    } else {
+        tool_bar.className = 'tool-bar tool-bar-large';
+    }
+    console.log(window.innerWidth);
 })

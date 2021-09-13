@@ -659,17 +659,27 @@ img {
 
 /* 侧边工具栏 tool-bar */
 
-.tool-bar {
+.tool-bar-large {
     position: fixed;
     right: 0;
     bottom: 70px;
     z-index: 99;
-    width: 84px;
+    /* width: 84px; */
     background: #fff;
     font-size: 14px;
 }
 
-.tool-bar .item{
+.tool-bar-small {
+    position: fixed;
+    left: 50%;
+    right: auto;
+    z-index: 99;
+    margin-left: 613px;
+    bottom: 40px;
+}
+
+/* 大工具栏 */
+ .tool-bar-large .item{
     display: block;
     width: 82px;
     height: 90px;
@@ -678,7 +688,7 @@ img {
     cursor: initial;
 }
 
-.tool-bar .item span {
+.tool-bar-large .item span {
     display: block;
     text-align: center;
     color: #757575;
@@ -686,7 +696,7 @@ img {
 
 }
 
-.tool-bar .item .icon {
+.tool-bar-large .item .icon {
     position: relative;
     width: 30px;
     height: 30px;
@@ -694,7 +704,7 @@ img {
     padding-top: 18px;
 }
 
-.tool-bar .item .icon img {
+ .tool-bar-large .item .icon img {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -702,6 +712,37 @@ img {
     height: 30px;
     transition: opacity .3s;
 }
+
+/* 小工具栏*/
+.tool-bar-small .item {
+    display: block;
+    width: 25px;
+    height: 40px;
+    margin-top: -1px;
+    border: 1px solid #f5f5f5;
+    cursor: initial;
+}
+.tool-bar-small .item span {
+    display: none;
+}
+
+.tool-bar-small .item .icon {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin: 0 auto 8px;
+    padding-top: 10px;
+}
+
+.tool-bar-small .item .icon img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    transition: opacity .3s;
+}
+
 
 
 .tool-bar .item .staic {
@@ -727,7 +768,7 @@ img {
     top: 0;
     left: -142px;
     visibility: hidden;
-    z-index: 2;
+    opacity: 1;
     width: 100px;
     height: 162px;
     padding: 14px;
@@ -738,7 +779,6 @@ img {
 .tool-bar .item .pop-content::after {
     content: "";
     position: absolute;
-    top: 21%;
     right: -19px;
     z-index: 1;
     border: 10px solid transparent;
@@ -748,11 +788,20 @@ img {
 .tool-bar .item .pop-content::before {
     content: "";
     position: absolute;
-    top: 21%;
     right: -18px;
     z-index: 2;
     border: 10px solid transparent;
     border-color: rgba(0,0,0,0) rgba(0,0,0,0) rgba(0,0,0,0) #fff;
+}
+
+.tool-bar-large .item .pop-content::after ,
+.tool-bar-large .item .pop-content::before {
+    top: 21%;
+}
+
+.tool-bar-small .item .pop-content::after ,
+.tool-bar-small .item .pop-content::before {
+    top: 5%;
 }
 
 .tool-bar .item .pop-content img {
